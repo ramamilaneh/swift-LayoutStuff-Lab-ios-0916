@@ -10,6 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
     var yellowSquare: UIView?
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var frameXSlider: UISlider!
+    
+    @IBOutlet weak var frameYSlider: UISlider!
+    
+    @IBOutlet weak var boundXSlider: UISlider!
+    
+    @IBOutlet weak var boundYSlider: UISlider!
+    
+    @IBOutlet weak var frameXLabel: UILabel!
+    
+    @IBOutlet weak var frameYLabel: UILabel!
+    
+    @IBOutlet weak var boundXLabel: UILabel!
+    
+    @IBOutlet weak var boundYLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +44,8 @@ class ViewController: UIViewController {
         frameXLabel.text = "frame x = \(frame.origin.x)"
         frameYLabel.text = "frame y = \(frame.origin.y)"
 
-        boundsXLabel.text = "bounds x = \(bounds.origin.x)"
-        boundsYLabel.text = "bounds y = \(bounds.origin.y)"
+        boundXLabel.text = "bounds x = \(bounds.origin.x)"
+        boundYLabel.text = "bounds y = \(bounds.origin.y)"
     }
 
     fileprivate func updateSliders() {
@@ -39,10 +58,10 @@ class ViewController: UIViewController {
         frameXSlider.value = Float(frame.origin.x)
         frameYSlider.value = Float(frame.origin.y)
 
-        boundsXSlider.maximumValue = Float(bounds.size.width)
-        boundsYSlider.maximumValue = Float(bounds.size.height)
-        boundsXSlider.value = Float(bounds.origin.x)
-        boundsYSlider.value = Float(bounds.origin.y)
+        boundXSlider.maximumValue = Float(bounds.size.width)
+        boundYSlider.maximumValue = Float(bounds.size.height)
+        boundXSlider.value = Float(bounds.origin.x)
+        boundYSlider.value = Float(bounds.origin.y)
     }
 
     fileprivate func updateYellowSquare() {
